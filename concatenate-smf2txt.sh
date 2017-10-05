@@ -1,6 +1,7 @@
 #!/bin/bash
-# Author:
-#	Sergi Vilardell <sergivilardell13@gmail.com >
+# Authors:
+#	Sergi Vilardell <sergivilardell13@gmail.com>
+#	Alfredo Hernández <aldomann.designs@gmail.com>
 
 OUTPUT=$HOME/"text-outputs"
 
@@ -12,7 +13,7 @@ for FOLDER in */; do
 	FNAME=${FOLDER// /_}
 	FNAME=${FNAME%/}
 	FILENAME="$OUTPUT/$FNAME.txt"
-	echo "" > $FILENAME
+	touch $FILENAME
 	cd $FNAME && cat *.txt >> $FILENAME
 	sed -i '/path/d' $FILENAME
 	sed -i '/@/d' $FILENAME
